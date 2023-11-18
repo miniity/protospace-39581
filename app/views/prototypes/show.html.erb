@@ -43,7 +43,7 @@
         <ul class="comments_lists">
           <% @comments.each do |comment| %>
             <li class="comments_list">
-              <%= " コメントのテキスト "%>
+               <%= comment.content %> 
               <%= link_to comment.user.name, user_path(@prototype.user), class: :comment_user %>
             </li>
           <% end %>
