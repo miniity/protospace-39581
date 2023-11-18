@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
   def show
-    @user = User.find(params[:id]) 
+    @user = User.find(params[:id])
     @prototypes = @user.prototypes
-    @nickname = current_user.name
-#    @prototypes = current_user.prototypes
+    @nickname = current_user.name if user_signed_in? # ログインしている場合のみ処理を行う
   end
 end
